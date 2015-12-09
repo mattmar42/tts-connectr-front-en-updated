@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- API/STYLESHEETS -->
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+ 
+
+    <title>Connectr</title>
+
+    <!-- W3CSS NAVBAR -->
+<div class="w3-container w3-center w3-animate-opacity">
+<div class="w3-topnav w3-medium w3-black">
+
+
+  <a href="activities.html">Activities</a>
+  <a href="interests.html">Interests</a>
+  <a href="connections.html">Connections</a>
+  <a href="signup.html">Sign in</a>
+
+  <!-- DROPDOWN MAIN-->
+  <div class="w3-dropdown-hover">
+  <button class="w3-btn w3-black"> Connectr. </button>
+  <div class="w3-dropdown-content w3-border w3-black">
+
+    <!--  DROPDOWN ITEM #1 -->
+      <button onclick="document.getElementById('id01').style.display='block'" class="w3-btn">  About this site.  </button>
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content-black">
+      <div class="w3-container">
+        <div class="w3-container w3-center w3-animate-opacity">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-closebtn" >×</span>
+        <h1>Connectr.</h1>
+        <h4>Developed in Ruby on Rails, jQuery, and W3CSS.</h4>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- ITEM #1 END -->
+
+<!-- DROPDOWN MAIN-->
+  <div class="w3-dropdown-content w3-border w3-black">
+
+    <!--  DROPDOWN ITEM #2 -->
+      <button onclick="document.getElementById('id02').style.display='block'" class="w3-btn"> Developers </button>
+  <div id="id02" class="w3-modal">
+    <div class="w3-modal-content-black">
+      <div class="w3-container">
+        <div class="w3-container w3-center w3-animate-opacity">
+        <span onclick="document.getElementById('id02').style.display='none'" class="w3-closebtn" >×</span>
+        <h1>Developed by:</h1>
+        <h4>Developed by Nora Orton, Matt Maring, Ben Allred, Heather Shane. </h4>
+        <h6>Group 6, get hype</h6>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- ITEM #2 END -->
+
+
+    <!-- DROPDOWN END-->
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- NAVBAR END -->
+
+</head>
+<div class="w3-container w3-center w3-animate-opacity">
+  <h1 class="header1"> Tell us about yourself. </h1>
+<div class="w3-card-4" style="width:100%">
+</div>
+</div>
+
+
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<!-- <form class="w3-form">
+  <div class="w3-input-group">
+    <label>First Name</label>
+    <input class="w3-input" type="text">
+  </div>
+  <div class="w3-input-group">
+    <label>Last Namel</label>
+    <input class="w3-input" type="text">
+  </div>
+  <div class="w3-input-group">
+    <label>Email</label>
+    <input class="w3-input" type="text">
+  </div>
+</form>
+ -->
+
+<div id="login-box">
+  <h1>Create Profile</h1>
+  <div class="field">
+    <%= f.text_field :name, :placeholder => "name" %>
+  </div>
+    <div class="field">
+    <%= f.text_field :location, :placeholder => "hometown" %>
+  </div>
+  <div class="field">
+    <%= f.text_area :bio, :placeholder => 'about me' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit :class => "w3-btn w3-teal"%>
+  </div>
+</div>
+</div>
+
+<% end %>

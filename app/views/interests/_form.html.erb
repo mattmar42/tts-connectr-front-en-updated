@@ -1,0 +1,44 @@
+
+
+
+<div class="w3-card-24 w3-white"
+<%= form_for(@interest) do |f| %>
+  <% if @interest.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@interest.errors.count, "error") %> prohibited this interest from being saved:</h2>
+
+      <ul>
+      <% @interest.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <% end %>
+
+
+
+        <span class="interests"><h2>Interests</h2></span> 
+        
+        <h5>Food/Drink</h5> 
+        <form>
+          <input type="checkbox" name="vehicle1" value="Bike"> Craft Beer
+          <input type="checkbox" name="vehicle2" value="Car"> Farm to Fork <br>
+          <input type="checkbox" name="vehicle1" value="Bike"> Carolina BBQ
+          <input type="checkbox" name="vehicle2" value="Car"> Mixed Drinks
+        </form>
+
+        <h5>Athletics</h5> 
+        <form>
+            <input type="checkbox" name="vehicle1" value="Bike"> Football
+            <input type="checkbox" name="vehicle2" value="Car"> Basketball <br>
+            <input type="checkbox" name="vehicle1" value="Bike"> Outdoor Activities
+            <input type="checkbox" name="vehicle2" value="Car"> Pick Up </form>
+        <h5>Arts/Culture</h5>
+        <form> 
+            <input type="checkbox" name="vehicle1" value="Bike"> Music 
+            <input type="checkbox" name="vehicle2" value="Car"> Galleries <br>
+            <input type="checkbox" name="vehicle1" value="Bike"> Theater
+            <input type="checkbox" name="vehicle2" value="Car">  Museums
+        </form>
+      </div>

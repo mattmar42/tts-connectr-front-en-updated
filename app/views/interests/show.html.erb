@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @interest.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @interest.description %>
+</p>
+
+<% if current_user.interests.include?(@interest) %>
+	<%= button_to 'Unsubscribe', {controller: 'subscriptions', action: 'destroy', id: current_user.subscriptions.find_by_interest_id(@interest)}, :method => :delete %>
+<% else %>
+	<%= button_to "subscribe", {action: 'create', controller: 'subscriptions', interest_id: @interest.id } %>	
+<% end %>
+
+<%= link_to 'Edit', edit_interest_path(@interest) %> |
+<%= link_to 'Back', interests_path %>
